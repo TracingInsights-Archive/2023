@@ -226,7 +226,7 @@ for event in events_list:
         drivers = session_drivers_list(YEAR, event, session)
 
         for driver in drivers:
-            f1session = fastf1.get_session(year, event, session)
+            f1session = fastf1.get_session(YEAR, event, session)
             f1session.load(telemetry=False, weather=False, messages=False)
             laps = f1session.laps
             driver_laps = laps.pick_driver(driver)
@@ -238,7 +238,7 @@ for event in events_list:
                 if not os.path.exists(driver_folder):
                     os.makedirs(driver_folder)
 
-                telemetry = telemetry_data(year, event, session, driver, lap_number)
+                telemetry = telemetry_data(YEAR, event, session, driver, lap_number)
 
                 print(telemetry)
 
