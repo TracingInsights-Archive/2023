@@ -240,7 +240,7 @@ for event in events_list:
 
                 telemetry = telemetry_data(YEAR, event, session, driver, lap_number)
 
-                print(telemetry)
+                # print(telemetry)
 
                 # Specify the file path where you want to save the JSON data
                 file_path = f"{driver_folder}/{lap_number}_tel.json"
