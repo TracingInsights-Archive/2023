@@ -219,14 +219,13 @@ events_list = events
 # Loop through each event
 for event in events_list:
     # Get sessions for the current event
-    if event == "Qatar Grand Prix":
-        sessions = ["Practice 1", "Qualifying", "Sprint Shootout", "Sprint", "Race"]
-    else:
-        sessions = sessions_available(YEAR, event)
+    sessions = sessions_available(YEAR, event)
+    
 
     # Loop through each session and create a folder within the event folder
     for session in sessions:
         drivers = session_drivers_list(YEAR, event, session)
+        
 
         for driver in drivers:
             f1session = fastf1.get_session(YEAR, event, session)
@@ -235,19 +234,25 @@ for event in events_list:
             driver_laps = laps.pick_driver(driver)
             driver_laps["LapNumber"] = driver_laps["LapNumber"].astype(int)
             driver_lap_numbers = round(driver_laps["LapNumber"]).tolist()
+            
 
             for lap_number in driver_lap_numbers:
                 driver_folder = f"{event}/{session}/{driver}"
                 if not os.path.exists(driver_folder):
                     os.makedirs(driver_folder)
 
-                telemetry = telemetry_data(YEAR, event, session, driver, lap_number)
+                try:
 
-                # print(telemetry)
+                    telemetry = telemetry_data(YEAR, event, session, driver, lap_number)
 
-                # Specify the file path where you want to save the JSON data
-                file_path = f"{driver_folder}/{lap_number}_tel.json"
 
-                # Save the dictionary to a JSON file
-                with open(file_path, "w") as json_file:
-                    json.dump(telemetry, json_file)
+                    # print(telemetry)
+
+                    # Specify the file path where you want to save the JSON data
+                    file_path = f"{driver_folder}/{lap_number}_tel.json"
+
+                    # Save the dictionary to a JSON file
+                    with open(file_path, "w") as json_file:
+                        json.dump(telemetry, json_file)
+                except:
+                    continue
