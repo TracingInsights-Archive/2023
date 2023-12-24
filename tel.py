@@ -25,8 +25,9 @@ events = [#'Pre-Season Testing',
     # 'Monaco Grand Prix', 'Spanish Grand Prix', 'Canadian Grand Prix', 
     # 'Austrian Grand Prix', 'British Grand Prix', 'Hungarian Grand Prix',
     # 'Belgian Grand Prix', 'Dutch Grand Prix', 'Italian Grand Prix', 
-    'Singapore Grand Prix', 'Japanese Grand Prix', 'Qatar Grand Prix', 
-    # 'United States Grand Prix', 'Mexico City Grand Prix', 'São Paulo Grand Prix', 'Las Vegas Grand Prix', 'Abu Dhabi Grand Prix'
+    'Singapore Grand Prix',  'Qatar Grand Prix', 
+    'United States Grand Prix', 
+    # 'Mexico City Grand Prix', 'São Paulo Grand Prix', 'Las Vegas Grand Prix', 'Abu Dhabi Grand Prix', 'Japanese Grand Prix',
 
 ]
 
