@@ -29,8 +29,8 @@ events = [#'Pre-Season Testing',
     # 'United States Grand Prix', 
     # 'Mexico City Grand Prix',
     # 'São Paulo Grand Prix', 'Las Vegas Grand Prix', 'Abu Dhabi Grand Prix', 
-    'Japanese Grand Prix', 
-    # 'Qatar Grand Prix', 
+    # 'Japanese Grand Prix', 
+    'Qatar Grand Prix', 
 
 ]
 
@@ -230,7 +230,14 @@ events_list = events
 # Loop through each event
 for event in events_list:
     # Get sessions for the current event
-    sessions = sessions_available(YEAR, event)
+    # sessions = sessions_available(YEAR, event)
+    sessions =  [
+      "Practice 1",
+      "Qualifying",
+      "Sprint Shootout",
+      "Sprint",
+      "Race",
+    ]
     
 
     # Loop through each session and create a folder within the event folder
