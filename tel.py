@@ -18,10 +18,10 @@ def events_available(year: int) -> any:
 
 
 events = [#'Qatar Grand Prix',
-    #'Pre-Season Testing', 
+    'Pre-Season Testing', 
 
-'Bahrain Grand Prix', 'Saudi Arabian Grand Prix', 
-    'Australian Grand Prix',
+# 'Bahrain Grand Prix', 'Saudi Arabian Grand Prix', 
+#     'Australian Grand Prix',
     # 'Azerbaijan Grand Prix', 
     # 'Miami Grand Prix',
     # 'Monaco Grand Prix', 
