@@ -17,8 +17,9 @@ def events_available(year: int) -> any:
     return events
 
 
-events = [#'Qatar Grand Prix',
-    'Pre-Season Testing', 
+events = [#
+    'Qatar Grand Prix',
+    # 'Pre-Season Testing', 
 
 # 'Bahrain Grand Prix', 'Saudi Arabian Grand Prix', 
 #     'Australian Grand Prix',
@@ -237,14 +238,14 @@ events_list = events
 # Loop through each event
 for event in events_list:
     # Get sessions for the current event
-    sessions = sessions_available(YEAR, event)
-    # sessions =  [
-    #   "Practice 1",
-    #   "Qualifying",
-    #   "Sprint Shootout",
-    #   "Sprint",
-    #   "Race",
-    # ]
+    # sessions = sessions_available(YEAR, event)
+    sessions =  [
+      "Practice 1",
+      "Qualifying",
+      "Sprint Shootout",
+      "Sprint",
+      "Race",
+    ]
     
 
     # Loop through each session and create a folder within the event folder
