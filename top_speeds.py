@@ -13,25 +13,25 @@ YEAR = 2023
 
 
 events = [
-    # 'Qatar Grand Prix',
-    'Pre-Season Testing', 
+    'Qatar Grand Prix',
+#     'Pre-Season Testing', 
 
-'Bahrain Grand Prix', 'Saudi Arabian Grand Prix', 
-    'Australian Grand Prix',
-    'Azerbaijan Grand Prix', 
-    'Miami Grand Prix',
-    'Monaco Grand Prix', 
-    'Spanish Grand Prix', 'Canadian Grand Prix', 
-    'Austrian Grand Prix', 
-    'British Grand Prix', 'Hungarian Grand Prix',
-    'Belgian Grand Prix', 
-    'Dutch Grand Prix', 'Italian Grand Prix', 
-    'Singapore Grand Prix', 
-    'United States Grand Prix', 
-    'Mexico City Grand Prix',
-    'São Paulo Grand Prix', 
+# 'Bahrain Grand Prix', 'Saudi Arabian Grand Prix', 
+#     'Australian Grand Prix',
+#     'Azerbaijan Grand Prix', 
+#     'Miami Grand Prix',
+#     'Monaco Grand Prix', 
+#     'Spanish Grand Prix', 'Canadian Grand Prix', 
+#     'Austrian Grand Prix', 
+#     'British Grand Prix', 'Hungarian Grand Prix',
+#     'Belgian Grand Prix', 
+#     'Dutch Grand Prix', 'Italian Grand Prix', 
+#     'Singapore Grand Prix', 
+#     'United States Grand Prix', 
+#     'Mexico City Grand Prix',
+#     'São Paulo Grand Prix', 
     
-    'Las Vegas Grand Prix', 'Abu Dhabi Grand Prix',     'Japanese Grand Prix', 
+#     'Las Vegas Grand Prix', 'Abu Dhabi Grand Prix',     'Japanese Grand Prix', 
      
 
 ]
@@ -86,15 +86,15 @@ events_list = events
 
 # Loop through each event
 for event in events_list:
-    sessions = sessions_available(YEAR, event)
-    if event == "Qatar Grand Prix":
-        sessions = [
-            "Practice 1",
-            "Qualifying",
-            "Sprint Shootout",
-            "Sprint",
-            "Race",
-        ]
+    # sessions = sessions_available(YEAR, event)
+    # if event == "Qatar Grand Prix":
+    sessions = [
+        "Practice 1",
+        "Qualifying",
+        "Sprint Shootout",
+        "Sprint",
+        "Race",
+    ]
     for session in sessions:
         top_speed_dict = top_speed(YEAR, event, session)
 
