@@ -14,7 +14,7 @@ YEAR = 2023
 
 events = [
     'Qatar Grand Prix',
-    'Pre-Season Testing', 
+    # 'Pre-Season Testing', 
 
 'Bahrain Grand Prix', 'Saudi Arabian Grand Prix', 
     'Australian Grand Prix',
