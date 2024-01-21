@@ -87,7 +87,14 @@ events_list = events
 # Loop through each event
 for event in events_list:
     sessions = sessions_available(YEAR, event)
-
+    if event == "Qatar Grand Prix":
+        sessions = [
+            "Practice 1",
+            "Qualifying",
+            "Sprint Shootout",
+            "Sprint",
+            "Race",
+        ]
     for session in sessions:
         top_speed_dict = top_speed(YEAR, event, session)
 
