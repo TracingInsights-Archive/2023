@@ -118,6 +118,7 @@ def get_circuit_info(*, year: int, circuit_key: int):
     return circuit_info
 
 for event in events:
+    sessions = utils.get_sessions(YEAR, event)
     for session in sessions:
         f1session = fastf1.get_session(YEAR, event, session)
         f1session.load()
