@@ -9,7 +9,7 @@ YEAR = 2023
 
 
 events = [#
-    # 'Qatar Grand Prix',
+    'Qatar Grand Prix',
     # 'Pre-Season Testing', 
 
 # 'Bahrain Grand Prix', 'Saudi Arabian Grand Prix', 
@@ -20,7 +20,7 @@ events = [#
 #     'Spanish Grand Prix', 'Canadian Grand Prix', 
 #     'Austrian Grand Prix', 
 #     'British Grand Prix', 'Hungarian Grand Prix',
-    'Belgian Grand Prix', 
+    # 'Belgian Grand Prix', 
 #     'Dutch Grand Prix', 'Italian Grand Prix', 
 #     'Singapore Grand Prix', 
 #     'United States Grand Prix', 
