@@ -20,7 +20,7 @@ events = [#
     'Spanish Grand Prix', 'Canadian Grand Prix', 
     'Austrian Grand Prix', 
     'British Grand Prix', 'Hungarian Grand Prix',
-    'Belgian Grand Prix', 
+    # 'Belgian Grand Prix', 
     'Dutch Grand Prix', 'Italian Grand Prix', 
     'Singapore Grand Prix', 
     'United States Grand Prix', 
