@@ -25,7 +25,7 @@ logging.getLogger("fastf1").propagate = False
 # Enable caching
 fastf1.Cache.enable_cache("cache")
 
-DEFAULT_YEAR = 2023
+DEFAULT_YEAR = 2025
 PROTO = "https"
 HOST = "api.multiviewer.app"
 HEADERS = {"User-Agent": f"FastF1/"}
@@ -47,29 +47,30 @@ class TelemetryExtractor:
         """Initialize the TelemetryExtractor."""
         self.year = year
         self.events = events or [
-     # 'Abu Dhabi Grand Prix',
+    # 'Abu Dhabi Grand Prix',
     # "Australian Grand Prix",
-    
-    
+
+
     # 'Bahrain Grand Prix',
 
     # 'British Grand Prix',
     # 'Canadian Grand Prix',
     # 'Dutch Grand Prix',
-    # 'Hungarian Grand Prix',
+    
     # 'Italian Grand Prix',
     # 'Japanese Grand Prix',
-    # 'Las Vegas Grand Prix',
+    'Las Vegas Grand Prix',
     'Mexico City Grand Prix',
-    'Miami Grand Prix',
+    # 'Miami Grand Prix',
     # 'Monaco Grand Prix',
 
- 
+
     # 'Saudi Arabian Grand Prix',
     # 'Singapore Grand Prix',
     # 'Spanish Grand Prix',
+    # 'Hungarian Grand Prix',
 ]
-        self.sessions = sessions or ["Practice 1" , "Practice 2", "Qualifying" ,"Race", "Practice 3"]
+        self.sessions = sessions or ["Practice 1" , "Practice 2", "Practice 3", "Qualifying" ,"Race"]
 
     def get_session(
         self, event: Union[str, int], session: str, load_telemetry: bool = False
@@ -116,6 +117,7 @@ class TelemetryExtractor:
             logger.error(f"Error getting drivers for {event} {session}: {str(e)}")
             return {"drivers": []}
 
+
     def laps_data(
         self, event: Union[str, int], session: str, driver: str, f1session=None
     ) -> Dict[str, List]:
@@ -126,15 +128,29 @@ class TelemetryExtractor:
 
             laps = f1session.laps
             driver_laps = laps.pick_drivers(driver).copy()  # Create a copy here
-            driver_laps["LapTime"] = driver_laps["LapTime"].apply(
-                lambda x: x.total_seconds() if hasattr(x, "total_seconds") else x
-            )
-            driver_laps = driver_laps[driver_laps.LapTime.notnull()]
+
+            # Convert lap times to seconds and handle NaN values
+            lap_times = []
+            for lap_time in driver_laps["LapTime"]:
+                if hasattr(lap_time, "total_seconds"):
+                    lap_times.append(lap_time.total_seconds())
+                elif pd.isna(lap_time):  # Check if it's NaN
+                    lap_times.append(None)  # Use None instead of NaN
+                else:
+                    lap_times.append(None)
+
+            # Handle NaN values in compounds
+            compounds = []
+            for compound in driver_laps["Compound"]:
+                if pd.isna(compound):
+                    compounds.append(None)  # Use None instead of NaN
+                else:
+                    compounds.append(compound)
 
             return {
-                "time": driver_laps["LapTime"].tolist(),
+                "time": lap_times,
                 "lap": driver_laps["LapNumber"].tolist(),
-                "compound": driver_laps["Compound"].tolist(),
+                "compound": compounds,
             }
         except Exception as e:
             logger.error(
@@ -391,6 +407,10 @@ class TelemetryExtractor:
 
             # Save lap times
             laptimes = self.laps_data(event, session, driver, f1session)
+            # Replace NaN values with None before JSON serialization
+            laptimes["time"] = ["None" if pd.isna(x) else x for x in laptimes["time"]]
+            laptimes["lap"] = ["None" if pd.isna(x) else x for x in laptimes["lap"]]
+            laptimes["compound"] = ["None" if pd.isna(x) else x for x in laptimes["compound"]]
             with open(f"{driver_dir}/laptimes.json", "w") as json_file:
                 json.dump(laptimes, json_file)
 

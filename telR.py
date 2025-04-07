@@ -25,7 +25,7 @@ logging.getLogger("fastf1").propagate = False
 # Enable caching
 fastf1.Cache.enable_cache("cache")
 
-DEFAULT_YEAR = 2023
+DEFAULT_YEAR = 2025
 PROTO = "https"
 HOST = "api.multiviewer.app"
 HEADERS = {"User-Agent": f"FastF1/"}
@@ -49,27 +49,28 @@ class TelemetryExtractor:
         self.events = events or [
     # 'Abu Dhabi Grand Prix',
     # "Australian Grand Prix",
-    
-    
+
+
     # 'Bahrain Grand Prix',
 
     # 'British Grand Prix',
     # 'Canadian Grand Prix',
     # 'Dutch Grand Prix',
-    # 'Hungarian Grand Prix',
-    # 'Italian Grand Prix',
+    
+    'Italian Grand Prix',
     'Japanese Grand Prix',
-    'Las Vegas Grand Prix',
+    # 'Las Vegas Grand Prix',
     # 'Mexico City Grand Prix',
     # 'Miami Grand Prix',
     # 'Monaco Grand Prix',
 
- 
+
     # 'Saudi Arabian Grand Prix',
     # 'Singapore Grand Prix',
     # 'Spanish Grand Prix',
+    # 'Hungarian Grand Prix',
 ]
-        self.sessions = sessions or ["Practice 1" , "Practice 2", "Qualifying" ,"Race", "Practice 3"]
+        self.sessions = sessions or ["Practice 1" , "Practice 2", "Practice 3", "Qualifying" ,"Race"]
 
     def get_session(
         self, event: Union[str, int], session: str, load_telemetry: bool = False
