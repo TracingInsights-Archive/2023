@@ -54,9 +54,9 @@ class TelemetryExtractor:
     # 'Bahrain Grand Prix',
 
     # 'British Grand Prix',
-    'Canadian Grand Prix',
-    'Dutch Grand Prix',
-    # 'Hungarian Grand Prix',
+    # 'Canadian Grand Prix',
+    # 'Dutch Grand Prix',
+    'Hungarian Grand Prix',
     # 'Italian Grand Prix',
     # 'Japanese Grand Prix',
     # 'Las Vegas Grand Prix',

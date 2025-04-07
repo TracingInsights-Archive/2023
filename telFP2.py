@@ -51,9 +51,9 @@ class TelemetryExtractor:
     # "Australian Grand Prix",
 
 
-    'Bahrain Grand Prix',
+    # 'Bahrain Grand Prix',
 
-    'British Grand Prix',
+    # 'British Grand Prix',
     # 'Canadian Grand Prix',
     # 'Dutch Grand Prix',
     # 'Hungarian Grand Prix',
@@ -67,7 +67,7 @@ class TelemetryExtractor:
 
     # 'Saudi Arabian Grand Prix',
     # 'Singapore Grand Prix',
-    # 'Spanish Grand Prix',
+    'Spanish Grand Prix',
 ]
         self.sessions = sessions or ["Practice 1" , "Practice 2", "Practice 3", "Qualifying" ,"Race"]
 

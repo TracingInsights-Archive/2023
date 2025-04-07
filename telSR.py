@@ -47,10 +47,10 @@ class TelemetryExtractor:
         """Initialize the TelemetryExtractor."""
         self.year = year
         self.events = events or [
-    'Azerbaijan Grand Prix',
-    'Austrian Grand Prix',
-    # 'Belgian Grand Prix',
-    # 'Qatar Grand Prix',
+    # 'Azerbaijan Grand Prix',
+    # 'Austrian Grand Prix',
+    'Belgian Grand Prix',
+    'Qatar Grand Prix',
     # 'United States Grand Prix',
     # 'São Paulo Grand Prix',
 ]
