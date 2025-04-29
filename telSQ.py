@@ -59,13 +59,13 @@ class TelemetryExtractor:
     
     # 'Italian Grand Prix',
     # 'Japanese Grand Prix',
-    'Las Vegas Grand Prix',
-    'Mexico City Grand Prix',
+    # 'Las Vegas Grand Prix',
+    # 'Mexico City Grand Prix',
     # 'Miami Grand Prix',
     # 'Monaco Grand Prix',
 
 
-    # 'Saudi Arabian Grand Prix',
+    'Saudi Arabian Grand Prix',
     # 'Singapore Grand Prix',
     # 'Spanish Grand Prix',
     # 'Hungarian Grand Prix',

@@ -62,7 +62,7 @@ class TelemetryExtractor:
     # 'Las Vegas Grand Prix',
     # 'Mexico City Grand Prix',
     'Miami Grand Prix',
-    'Monaco Grand Prix',
+    # 'Monaco Grand Prix',
 
 
     # 'Saudi Arabian Grand Prix',
