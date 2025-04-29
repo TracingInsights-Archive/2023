@@ -72,8 +72,8 @@ class TelemetryExtractor:
         ]
         self.sessions = sessions or [
             "Practice 1",
-        "Sprint Qualifying",
-        "Sprint",
+       "Practice 2",
+        "Practice 3",
         "Qualifying",
         "Race",
         ]
