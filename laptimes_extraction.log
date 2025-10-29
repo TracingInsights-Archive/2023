@@ -1,11 +1,11 @@
-2025-10-29 14:57:24,350 - laptimes_extractor - INFO - Starting to wait for 2023 season data...
-2025-10-29 14:57:24,350 - laptimes_extractor - INFO - Checking data availability for 2023 Miami Grand Prix Race...
-2025-10-29 14:57:32,247 - laptimes_extractor - INFO - Data is available for 2023 Miami Grand Prix Race
-2025-10-29 14:57:32,247 - laptimes_extractor - INFO - Data is available for 2023 season. Starting extraction...
-2025-10-29 14:57:32,247 - laptimes_extractor - INFO - Starting laptimes extraction for 2023 season
-2025-10-29 14:57:32,247 - laptimes_extractor - INFO - Events: ['Miami Grand Prix', 'Australian Grand Prix', 'Saudi Arabian Grand Prix']
-2025-10-29 14:57:32,248 - laptimes_extractor - INFO - Sessions: ['Race']
-2025-10-29 14:57:32,248 - laptimes_extractor - INFO - Processing Miami Grand Prix - Race
-2025-10-29 14:57:32,254 - laptimes_extractor - INFO - Processing Australian Grand Prix - Race
-2025-10-29 14:57:32,269 - laptimes_extractor - INFO - Processing Saudi Arabian Grand Prix - Race
-2025-10-29 14:59:05,584 - laptimes_extractor - INFO - Laptimes extraction completed in 93.34 seconds
+2025-10-29 15:15:32,863 - laptimes_extractor - INFO - Starting to wait for 2023 season data...
+2025-10-29 15:15:32,864 - laptimes_extractor - INFO - Checking data availability for 2023 Bahrain Grand Prix Race...
+2025-10-29 15:15:40,237 - laptimes_extractor - INFO - Data is available for 2023 Bahrain Grand Prix Race
+2025-10-29 15:15:40,237 - laptimes_extractor - INFO - Data is available for 2023 season. Starting extraction...
+2025-10-29 15:15:40,237 - laptimes_extractor - INFO - Starting laptimes extraction for 2023 season
+2025-10-29 15:15:40,237 - laptimes_extractor - INFO - Events: ['Bahrain Grand Prix', 'Azerbaijan Grand Prix', 'Austrian Grand Prix']
+2025-10-29 15:15:40,237 - laptimes_extractor - INFO - Sessions: ['Race']
+2025-10-29 15:15:40,237 - laptimes_extractor - INFO - Processing Bahrain Grand Prix - Race
+2025-10-29 15:15:40,238 - laptimes_extractor - INFO - Processing Azerbaijan Grand Prix - Race
+2025-10-29 15:15:40,238 - laptimes_extractor - INFO - Processing Austrian Grand Prix - Race
+2025-10-29 15:17:11,899 - laptimes_extractor - INFO - Laptimes extraction completed in 91.66 seconds
