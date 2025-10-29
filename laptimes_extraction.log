@@ -1,11 +1,12 @@
-2025-10-29 15:15:32,863 - laptimes_extractor - INFO - Starting to wait for 2023 season data...
-2025-10-29 15:15:32,864 - laptimes_extractor - INFO - Checking data availability for 2023 Bahrain Grand Prix Race...
-2025-10-29 15:15:40,237 - laptimes_extractor - INFO - Data is available for 2023 Bahrain Grand Prix Race
-2025-10-29 15:15:40,237 - laptimes_extractor - INFO - Data is available for 2023 season. Starting extraction...
-2025-10-29 15:15:40,237 - laptimes_extractor - INFO - Starting laptimes extraction for 2023 season
-2025-10-29 15:15:40,237 - laptimes_extractor - INFO - Events: ['Bahrain Grand Prix', 'Azerbaijan Grand Prix', 'Austrian Grand Prix']
-2025-10-29 15:15:40,237 - laptimes_extractor - INFO - Sessions: ['Race']
-2025-10-29 15:15:40,237 - laptimes_extractor - INFO - Processing Bahrain Grand Prix - Race
-2025-10-29 15:15:40,238 - laptimes_extractor - INFO - Processing Azerbaijan Grand Prix - Race
-2025-10-29 15:15:40,238 - laptimes_extractor - INFO - Processing Austrian Grand Prix - Race
-2025-10-29 15:17:11,899 - laptimes_extractor - INFO - Laptimes extraction completed in 91.66 seconds
+2025-10-29 15:20:51,233 - laptimes_extractor - INFO - Starting to wait for 2023 season data...
+2025-10-29 15:20:51,233 - laptimes_extractor - INFO - Checking data availability for 2023 Belgian Grand Prix Race...
+2025-10-29 15:20:58,325 - laptimes_extractor - INFO - Data is available for 2023 Belgian Grand Prix Race
+2025-10-29 15:20:58,325 - laptimes_extractor - INFO - Data is available for 2023 season. Starting extraction...
+2025-10-29 15:20:58,325 - laptimes_extractor - INFO - Starting laptimes extraction for 2023 season
+2025-10-29 15:20:58,325 - laptimes_extractor - INFO - Events: ['Belgian Grand Prix', 'Qatar Grand Prix', 'United States Grand Prix', 'São Paulo Grand Prix']
+2025-10-29 15:20:58,326 - laptimes_extractor - INFO - Sessions: ['Race']
+2025-10-29 15:20:58,326 - laptimes_extractor - INFO - Processing Belgian Grand Prix - Race
+2025-10-29 15:20:58,326 - laptimes_extractor - INFO - Processing Qatar Grand Prix - Race
+2025-10-29 15:20:58,327 - laptimes_extractor - INFO - Processing United States Grand Prix - Race
+2025-10-29 15:20:58,328 - laptimes_extractor - INFO - Processing São Paulo Grand Prix - Race
+2025-10-29 15:22:51,874 - laptimes_extractor - INFO - Laptimes extraction completed in 113.55 seconds
