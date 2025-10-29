@@ -62,13 +62,13 @@ class LaptimeExtractor:
                 # "Miami Grand Prix",
                 # "Australian Grand Prix",
                 # "Saudi Arabian Grand Prix",
-                "Bahrain Grand Prix",
-                "Azerbaijan Grand Prix",
-                "Austrian Grand Prix",
-                # "Belgian Grand Prix",
-                # "Qatar Grand Prix",
-                # "United States Grand Prix",
-                # "São Paulo Grand Prix",
+                # "Bahrain Grand Prix",
+                # "Azerbaijan Grand Prix",
+                # "Austrian Grand Prix",
+                "Belgian Grand Prix",
+                "Qatar Grand Prix",
+                "United States Grand Prix",
+                "São Paulo Grand Prix",
         ]
         self.sessions = sessions or ["Race"]
 
@@ -425,6 +425,7 @@ def main():
 if __name__ == "__main__":
 
     main()
+
 
 
 
