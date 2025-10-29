@@ -59,12 +59,12 @@ class LaptimeExtractor:
                 # "Canadian Grand Prix",
                 # "Spanish Grand Prix",
                 # "Monaco Grand Prix",
-                "Miami Grand Prix",
-                "Australian Grand Prix",
-                "Saudi Arabian Grand Prix",
-                # "Bahrain Grand Prix",
-                # "Azerbaijan Grand Prix",
-                # "Austrian Grand Prix",
+                # "Miami Grand Prix",
+                # "Australian Grand Prix",
+                # "Saudi Arabian Grand Prix",
+                "Bahrain Grand Prix",
+                "Azerbaijan Grand Prix",
+                "Austrian Grand Prix",
                 # "Belgian Grand Prix",
                 # "Qatar Grand Prix",
                 # "United States Grand Prix",
@@ -425,6 +425,7 @@ def main():
 if __name__ == "__main__":
 
     main()
+
 
 
 
