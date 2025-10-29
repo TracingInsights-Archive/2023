@@ -1,0 +1,11 @@
+2025-10-29 13:50:21,361 - laptimes_extractor - INFO - Starting to wait for 2023 season data...
+2025-10-29 13:50:21,361 - laptimes_extractor - INFO - Checking data availability for 2023 Abu Dhabi Grand Prix Race...
+2025-10-29 13:50:29,812 - laptimes_extractor - INFO - Data is available for 2023 Abu Dhabi Grand Prix Race
+2025-10-29 13:50:29,812 - laptimes_extractor - INFO - Data is available for 2023 season. Starting extraction...
+2025-10-29 13:50:29,812 - laptimes_extractor - INFO - Starting laptimes extraction for 2023 season
+2025-10-29 13:50:29,812 - laptimes_extractor - INFO - Events: ['Abu Dhabi Grand Prix', 'Las Vegas Grand Prix', 'Mexico City Grand Prix']
+2025-10-29 13:50:29,812 - laptimes_extractor - INFO - Sessions: ['Race']
+2025-10-29 13:50:29,812 - laptimes_extractor - INFO - Processing Abu Dhabi Grand Prix - Race
+2025-10-29 13:50:29,813 - laptimes_extractor - INFO - Processing Las Vegas Grand Prix - Race
+2025-10-29 13:50:29,813 - laptimes_extractor - INFO - Processing Mexico City Grand Prix - Race
+2025-10-29 13:52:03,239 - laptimes_extractor - INFO - Laptimes extraction completed in 93.43 seconds
