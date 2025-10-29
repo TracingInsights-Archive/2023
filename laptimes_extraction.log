@@ -1,11 +1,11 @@
-2025-10-29 13:57:55,925 - laptimes_extractor - INFO - Starting to wait for 2023 season data...
-2025-10-29 13:57:55,925 - laptimes_extractor - INFO - Checking data availability for 2023 Japanese Grand Prix Race...
-2025-10-29 13:58:03,336 - laptimes_extractor - INFO - Data is available for 2023 Japanese Grand Prix Race
-2025-10-29 13:58:03,336 - laptimes_extractor - INFO - Data is available for 2023 season. Starting extraction...
-2025-10-29 13:58:03,336 - laptimes_extractor - INFO - Starting laptimes extraction for 2023 season
-2025-10-29 13:58:03,336 - laptimes_extractor - INFO - Events: ['Japanese Grand Prix', 'Singapore Grand Prix', 'Italian Grand Prix']
-2025-10-29 13:58:03,336 - laptimes_extractor - INFO - Sessions: ['Race']
-2025-10-29 13:58:03,337 - laptimes_extractor - INFO - Processing Japanese Grand Prix - Race
-2025-10-29 13:58:03,337 - laptimes_extractor - INFO - Processing Singapore Grand Prix - Race
-2025-10-29 13:58:03,337 - laptimes_extractor - INFO - Processing Italian Grand Prix - Race
-2025-10-29 13:59:27,412 - laptimes_extractor - INFO - Laptimes extraction completed in 84.08 seconds
+2025-10-29 14:48:57,131 - laptimes_extractor - INFO - Starting to wait for 2023 season data...
+2025-10-29 14:48:57,131 - laptimes_extractor - INFO - Checking data availability for 2023 Dutch Grand Prix Race...
+2025-10-29 14:49:05,224 - laptimes_extractor - INFO - Data is available for 2023 Dutch Grand Prix Race
+2025-10-29 14:49:05,224 - laptimes_extractor - INFO - Data is available for 2023 season. Starting extraction...
+2025-10-29 14:49:05,224 - laptimes_extractor - INFO - Starting laptimes extraction for 2023 season
+2025-10-29 14:49:05,224 - laptimes_extractor - INFO - Events: ['Dutch Grand Prix', 'Hungarian Grand Prix', 'British Grand Prix']
+2025-10-29 14:49:05,224 - laptimes_extractor - INFO - Sessions: ['Race']
+2025-10-29 14:49:05,224 - laptimes_extractor - INFO - Processing Dutch Grand Prix - Race
+2025-10-29 14:49:05,226 - laptimes_extractor - INFO - Processing Hungarian Grand Prix - Race
+2025-10-29 14:49:05,246 - laptimes_extractor - INFO - Processing British Grand Prix - Race
+2025-10-29 14:50:50,003 - laptimes_extractor - INFO - Laptimes extraction completed in 104.78 seconds
