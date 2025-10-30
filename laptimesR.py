@@ -152,7 +152,9 @@ class LaptimeExtractor:
             laps = f1session.laps
             driver_laps = laps.pick_drivers(driver).copy()
 
-            # Try to get lap times from Ergast and overwrite
+            # Get Ergast lap times but DON'T overwrite the LapTime column
+            # Store them in a separate mapping instead
+            ergast_lap_map = {}
             if session == "Race":
                 ergast_laps = self._get_lap_times_from_ergast(event, session, driver, f1session)
                 if ergast_laps is not None and not ergast_laps.empty:
@@ -160,7 +162,6 @@ class LaptimeExtractor:
                         int(lap['LapNumber']): lap['LapTime_Ergast']
                         for _, lap in ergast_laps.iterrows()
                     }
-                    driver_laps['LapTime'] = driver_laps['LapNumber'].map(ergast_lap_map).fillna(driver_laps['LapTime'])
 
             # Helper function to convert timedelta to seconds
             def timedelta_to_seconds(time_value):
@@ -168,10 +169,16 @@ class LaptimeExtractor:
                     return "None"
                 return round(time_value.total_seconds(), 3)
 
-            # Convert lap times to seconds and handle NaN values
-            lap_times = [
-                timedelta_to_seconds(lap_time) for lap_time in driver_laps["LapTime"]
-            ]
+            # Convert lap times to seconds, using Ergast times when available
+            lap_times = []
+            for idx, row in driver_laps.iterrows():
+                lap_number = row["LapNumber"]
+                # Use Ergast time if available, otherwise use FastF1 time
+                if lap_number in ergast_lap_map:
+                    lap_time_value = ergast_lap_map[lap_number]
+                else:
+                    lap_time_value = row["LapTime"]
+                lap_times.append(timedelta_to_seconds(lap_time_value))
 
             # Convert sector times to seconds
             sector1_times = [
@@ -224,7 +231,7 @@ class LaptimeExtractor:
                 else:
                     track_status.append(str(status))
 
-            # Handle IsPersonalBest
+            # Handle IsPersonalBest - use original FastF1 values
             is_personal_best = []
             for is_pb in driver_laps["IsPersonalBest"]:
                 if pd.isna(is_pb):
