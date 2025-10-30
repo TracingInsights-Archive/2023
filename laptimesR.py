@@ -73,12 +73,12 @@ class LaptimeExtractor:
         self.sessions = sessions or ["Race"]
 
     def get_session(
-        self, event: Union[str, int], session: str, load_telemetry: bool = False
+        self, event: Union[str, int], session: str, load_telemetry: bool = True
     ) -> fastf1.core.Session:
         """Get a session object."""
         f1session = fastf1.get_session(self.year, event, session)
         # NOW load weather data
-        f1session.load(telemetry=load_telemetry, weather=True, messages=False)
+        f1session.load(telemetry=load_telemetry, weather=True, messages=True)
         return f1session
 
     def session_drivers_list(self, event: Union[str, int], session: str) -> List[str]:
