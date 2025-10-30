@@ -65,10 +65,10 @@ class LaptimeExtractor:
                 # "Bahrain Grand Prix",
                 # "Azerbaijan Grand Prix",
                 # "Austrian Grand Prix",
-                "Belgian Grand Prix",
+                # "Belgian Grand Prix",
                 "Qatar Grand Prix",
-                "United States Grand Prix",
-                "São Paulo Grand Prix",
+                # "United States Grand Prix",
+                # "São Paulo Grand Prix",
         ]
         self.sessions = sessions or ["Race"]
 
@@ -77,8 +77,8 @@ class LaptimeExtractor:
     ) -> fastf1.core.Session:
         """Get a session object."""
         f1session = fastf1.get_session(self.year, event, session)
-        # Match telR.py exactly: weather=False, messages=False
-        f1session.load(telemetry=load_telemetry, weather=False, messages=False)
+        # NOW load weather data
+        f1session.load(telemetry=load_telemetry, weather=True, messages=False)
         return f1session
 
     def session_drivers_list(self, event: Union[str, int], session: str) -> List[str]:
@@ -139,6 +139,33 @@ class LaptimeExtractor:
             logger.error(f"Error fetching lap times from Ergast for {driver}: {str(e)}")
             return None
 
+    def _extract_weather_for_laps(self, driver_laps):
+        """
+        Extract weather data for all laps using fastf1's built-in get_weather_data() method.
+        
+        Returns lists of weather values for each lap.
+        """
+        try:
+            # Use fastf1's built-in method to get weather for all laps
+            weather_df = driver_laps.get_weather_data()
+            
+            # Extract and round weather fields
+            weather_at = [val if pd.notna(val) else "None" for val in weather_df['AirTemp']]
+            weather_rh = [val if pd.notna(val) else "None" for val in weather_df['Humidity']]
+            weather_p = [val if pd.notna(val) else "None" for val in weather_df['Pressure']]
+            weather_rf = [bool(val) if pd.notna(val) else "None" for val in weather_df['Rainfall']]
+            weather_tt = [val if pd.notna(val) else "None" for val in weather_df['TrackTemp']]
+            weather_wd = [val if pd.notna(val) else "None" for val in weather_df['WindDirection']]
+            weather_ws = [val if pd.notna(val) else "None" for val in weather_df['WindSpeed']]
+            
+            return weather_at, weather_rh, weather_p, weather_rf, weather_tt, weather_wd, weather_ws
+            
+        except Exception as e:
+            logger.warning(f"Could not get weather data: {str(e)}")
+            # Return None values for all laps if weather unavailable
+            num_laps = len(driver_laps)
+            return (["None"] * num_laps,) * 7
+
     def laps_data(
         self, event: Union[str, int], session: str, driver: str, f1session=None
     ) -> Dict[str, List]:
@@ -149,6 +176,10 @@ class LaptimeExtractor:
 
             laps = f1session.laps
             driver_laps = laps.pick_drivers(driver).copy()
+
+            # Extract weather data for all laps at once using fastf1's built-in method
+            weather_at, weather_rh, weather_p, weather_rf, weather_tt, weather_wd, weather_ws = \
+                self._extract_weather_for_laps(driver_laps)
 
             # Try to get lap times from Ergast and overwrite
             if session == "Race":
@@ -242,6 +273,13 @@ class LaptimeExtractor:
                 "pos": positions,
                 "status": track_status,
                 "pb": is_personal_best,
+                "AT": weather_at,
+                "RH": weather_rh,
+                "P": weather_p,
+                "RF": weather_rf,
+                "TT": weather_tt,
+                "WD": weather_wd,
+                "WS": weather_ws,
             }
         except Exception as e:
             logger.error(
@@ -259,6 +297,13 @@ class LaptimeExtractor:
                 "pos": [],
                 "status": [],
                 "pb": [],
+                "AT": [],
+                "RH": [],
+                "P": [],
+                "RF": [],
+                "TT": [],
+                "WD": [],
+                "WS": [],
             }
 
     def process_driver(
@@ -423,4 +468,3 @@ def main():
 if __name__ == "__main__":
 
     main()
-
