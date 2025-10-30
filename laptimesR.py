@@ -77,7 +77,7 @@ class LaptimeExtractor:
     ) -> fastf1.core.Session:
         """Get a session object."""
         f1session = fastf1.get_session(self.year, event, session)
-        # NOW load weather data
+        # Load weather data AND messages (messages required for Deleted/DeletedReason)
         f1session.load(telemetry=load_telemetry, weather=True, messages=True)
         return f1session
 
@@ -213,6 +213,25 @@ class LaptimeExtractor:
                 timedelta_to_seconds(s3_time) for s3_time in driver_laps["Sector3Time"]
             ]
 
+            # NEW: Convert Time (lap completion time) to seconds
+            lap_completion_times = [
+                timedelta_to_seconds(t) for t in driver_laps["Time"]
+            ]
+
+            # NEW: Convert LapStartTime to seconds
+            lap_start_times = [
+                timedelta_to_seconds(t) for t in driver_laps["LapStartTime"]
+            ]
+
+            # NEW: Convert LapStartDate to ISO format string
+            lap_start_dates = []
+            for date_val in driver_laps["LapStartDate"]:
+                if pd.isna(date_val):
+                    lap_start_dates.append("None")
+                else:
+                    # Convert to ISO format string
+                    lap_start_dates.append(str(date_val))
+
             # Handle NaN values in compounds
             compounds = []
             for compound in driver_laps["Compound"]:
@@ -261,6 +280,30 @@ class LaptimeExtractor:
                 else:
                     is_personal_best.append(bool(is_pb))
 
+            # NEW: Handle IsAccurate
+            is_accurate = []
+            for is_acc in driver_laps["IsAccurate"]:
+                if pd.isna(is_acc):
+                    is_accurate.append("None")
+                else:
+                    is_accurate.append(bool(is_acc))
+
+            # NEW: Handle Deleted (requires messages to be loaded)
+            deleted = []
+            for is_del in driver_laps["Deleted"]:
+                if pd.isna(is_del):
+                    deleted.append("None")
+                else:
+                    deleted.append(bool(is_del))
+
+            # NEW: Handle DeletedReason
+            deleted_reasons = []
+            for reason in driver_laps["DeletedReason"]:
+                if pd.isna(reason) or reason == "":
+                    deleted_reasons.append("None")
+                else:
+                    deleted_reasons.append(str(reason))
+
             return {
                 "time": lap_times,
                 "lap": driver_laps["LapNumber"].tolist(),
@@ -280,6 +323,13 @@ class LaptimeExtractor:
                 "TT": weather_tt,
                 "WD": weather_wd,
                 "WS": weather_ws,
+                # NEW FIELDS
+                "isAcc": is_accurate,
+                "isDel": deleted,
+                "DelR": deleted_reasons,
+                "ETime": lap_completion_times,  # This is the "Time" field
+                "STime": lap_start_times,
+                "SDate": lap_start_dates,
             }
         except Exception as e:
             logger.error(
@@ -304,6 +354,13 @@ class LaptimeExtractor:
                 "TT": [],
                 "WD": [],
                 "WS": [],
+                # NEW FIELDS
+                "isAcc": [],
+                "isDel": [],
+                "DelR": [],
+                "ETime": [],
+                "STime": [],
+                "SDate": [],
             }
 
     def process_driver(
