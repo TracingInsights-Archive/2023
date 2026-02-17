@@ -38,14 +38,14 @@ TARGET_EVENT_NAMES_LIST = [
                 # "Italian Grand Prix",
                 # "Dutch Grand Prix",
                 # "Hungarian Grand Prix",
-                "British Grand Prix",
+                # "British Grand Prix",
                 # "Canadian Grand Prix",
                 # "Spanish Grand Prix",
                 # "Monaco Grand Prix",
                 # "Miami Grand Prix",
                 # "Australian Grand Prix",
                 # "Saudi Arabian Grand Prix",
-                # "Bahrain Grand Prix",
+                "Bahrain Grand Prix",
 
                 #sprints below
                 # "Azerbaijan Grand Prix",
