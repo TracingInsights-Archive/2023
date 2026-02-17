@@ -30,14 +30,14 @@ import requests
 DEFAULT_YEAR = 2023
 # Keep exactly one uncommented event in this list.
 TARGET_EVENT_NAMES_LIST = [
-                "Abu Dhabi Grand Prix",
+                # "Abu Dhabi Grand Prix",
                 # "Las Vegas Grand Prix",
                 # "Mexico City Grand Prix",
                 # "Japanese Grand Prix",
                 # "Singapore Grand Prix",
                 # "Italian Grand Prix",
                 # "Dutch Grand Prix",
-                # "Hungarian Grand Prix",
+                "Hungarian Grand Prix",
                 # "British Grand Prix",
                 # "Canadian Grand Prix",
                 # "Spanish Grand Prix",
