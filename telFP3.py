@@ -67,6 +67,7 @@ AVAILABLE_SESSIONS = [
     "Practice 3",
     "Qualifying",
     "Sprint Qualifying",
+    "Sprint Shootout",
     "Sprint",
     "Race",
 ]
