@@ -52,8 +52,8 @@ TARGET_EVENT_NAMES_LIST = [
                 # "Austrian Grand Prix",
                 # "Belgian Grand Prix",
                 # "Qatar Grand Prix",
-                "United States Grand Prix",
-                # "São Paulo Grand Prix",
+                # "United States Grand Prix",
+                "São Paulo Grand Prix",
             ]
 if len(TARGET_EVENT_NAMES_LIST) != 1:
     raise ValueError(
@@ -1020,4 +1020,5 @@ def main():
 
 
 if __name__ == "__main__":
+
     main()
