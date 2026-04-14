@@ -34,8 +34,8 @@ import requests
 DEFAULT_YEAR = 2023
 # Keep exactly one uncommented event in this list.
 TARGET_EVENT_NAMES_LIST = [
-    'Abu Dhabi Grand Prix',
-    "Australian Grand Prix",
+    # 'Abu Dhabi Grand Prix',
+    # "Australian Grand Prix",
     # 'Austrian Grand Prix',
     # 'Azerbaijan Grand Prix',
     # 'Bahrain Grand Prix',
@@ -50,12 +50,12 @@ TARGET_EVENT_NAMES_LIST = [
     # 'Mexico City Grand Prix',
     # 'Miami Grand Prix',
     # 'Monaco Grand Prix',
-    # 'Qatar Grand Prix',
-    # 'São Paulo Grand Prix',
+    'Qatar Grand Prix',
+    'São Paulo Grand Prix',
     # 'Saudi Arabian Grand Prix',
     # 'Singapore Grand Prix',
     # 'Spanish Grand Prix',
-    # 'United States Grand Prix',
+    'United States Grand Prix',
 ]
 TARGET_EVENT_NAMES = [e.strip() for e in TARGET_EVENT_NAMES_LIST if e.strip()]
 if not TARGET_EVENT_NAMES:
@@ -71,12 +71,12 @@ AVAILABLE_SESSIONS = [
 ]
 # Select one or more sessions from AVAILABLE_SESSIONS.
 TARGET_SESSIONS = [
-    "Practice 1",
-    "Practice 2",
-    "Practice 3",
-    "Qualifying",
+    # "Practice 1",
+    # "Practice 2",
+    # "Practice 3",
+    # "Qualifying",
     "Sprint Shootout",
-    "Sprint",
+    # "Sprint",
     # "Race",
 ]
 invalid_target_sessions = sorted(set(TARGET_SESSIONS) - set(AVAILABLE_SESSIONS))
